@@ -6,6 +6,7 @@
   "dependencies": {
     "@mongodb-js/zstd": "^1.1.0",
     "bufferutil": "^4.0.8",
+    "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "gcp-metadata": "^5.2.0",
     "kerberos": "^2.0.1",

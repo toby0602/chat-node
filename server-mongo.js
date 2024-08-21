@@ -1,6 +1,7 @@
 const express = require('express');
 const http = require('http');
 const WebSocket = require('ws');
+require('dotenv').config();
 const mongoose = require('mongoose');
 const path = require('path');
 
@@ -24,6 +25,15 @@ mongoose.connect('mongodb://127.0.0.1:27017/chatroom', {
 })
   .then(() => console.log('Connected to MongoDB'))
   .catch(err => console.error('MongoDB connection error:', err));
+
+
+// // 使用環境變數中的 MongoDB 連接字串
+// mongoose.connect(process.env.MONGODB_URI, {
+//     serverSelectionTimeoutMS: 50000 // 設置為 50 秒的連接超時
+//   })
+//     .then(() => console.log('Connected to MongoDB'))
+//     .catch(err => console.error('MongoDB connection error:', err));
+
 
 // 定義聊天訊息模型
 const messageSchema = new mongoose.Schema({
